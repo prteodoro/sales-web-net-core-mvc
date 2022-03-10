@@ -16,5 +16,7 @@ namespace SalesWebMvc.Data
         }
 
         public DbSet<Entities.Department> Department { get; set; }
+        public DbSet<Entities.Seller> Seller { get; set; }
+        public DbSet<Entities.SalesRecord> SalesRecord { get; set; }
     }
 }
