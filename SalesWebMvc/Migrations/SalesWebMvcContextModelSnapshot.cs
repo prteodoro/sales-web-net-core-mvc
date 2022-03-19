@@ -19,7 +19,7 @@ namespace SalesWebMvc.Migrations
                 .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Entities.Department", b =>
+            modelBuilder.Entity("Models.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,7 +34,7 @@ namespace SalesWebMvc.Migrations
                     b.ToTable("Department");
                 });
 
-            modelBuilder.Entity("Entities.SalesRecord", b =>
+            modelBuilder.Entity("Models.SalesRecord", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +59,7 @@ namespace SalesWebMvc.Migrations
                     b.ToTable("SalesRecord");
                 });
 
-            modelBuilder.Entity("Entities.Seller", b =>
+            modelBuilder.Entity("Models.Seller", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -89,9 +89,9 @@ namespace SalesWebMvc.Migrations
                     b.ToTable("Seller");
                 });
 
-            modelBuilder.Entity("Entities.SalesRecord", b =>
+            modelBuilder.Entity("Models.SalesRecord", b =>
                 {
-                    b.HasOne("Entities.Seller", "Seller")
+                    b.HasOne("Models.Seller", "Seller")
                         .WithMany("Sales")
                         .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -100,9 +100,9 @@ namespace SalesWebMvc.Migrations
                     b.Navigation("Seller");
                 });
 
-            modelBuilder.Entity("Entities.Seller", b =>
+            modelBuilder.Entity("Models.Seller", b =>
                 {
-                    b.HasOne("Entities.Department", "Department")
+                    b.HasOne("Models.Department", "Department")
                         .WithMany("Sellers")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -111,12 +111,12 @@ namespace SalesWebMvc.Migrations
                     b.Navigation("Department");
                 });
 
-            modelBuilder.Entity("Entities.Department", b =>
+            modelBuilder.Entity("Models.Department", b =>
                 {
                     b.Navigation("Sellers");
                 });
 
-            modelBuilder.Entity("Entities.Seller", b =>
+            modelBuilder.Entity("Models.Seller", b =>
                 {
                     b.Navigation("Sales");
                 });

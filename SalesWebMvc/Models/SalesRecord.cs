@@ -1,6 +1,6 @@
-﻿using Entities.Enums;
+﻿using SalesWebMvc.Models.Enums;
 
-namespace Entities
+namespace SalesWebMvc.Models
 {
     public class SalesRecord
     {
